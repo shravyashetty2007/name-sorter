@@ -1,4 +1,5 @@
 # name-sorter
+Project to read unsorted names, sort it and write it to file using java 8
 
 Clone the repository
 
