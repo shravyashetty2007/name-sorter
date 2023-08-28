@@ -25,12 +25,17 @@ public class SorterTest {
 	@Test
 	public void testSortByLastNameAndGivenName() {
 
-		List<PersonName> actual = new ArrayList<>();
-		actual.add(new PersonName("Shalmi", "Shetty"));
-		actual.add(new PersonName("Shravya Bhaskar", "Shetty"));
-		actual.add(new PersonName("Viraj", "Hegde"));
+		List<PersonName> inputNames = new ArrayList<>();
+		inputNames.add(new PersonName("Shalmi", "Shetty"));
+		inputNames.add(new PersonName("Shravya Bhaskar", "Shetty"));
+		inputNames.add(new PersonName("Viraj", "Hegde"));
 
-		List<PersonName> expected = sorter.sortByLastNameAndGivenName(actual);
+		List<PersonName> expected = new ArrayList<>();
+		expected.add(new PersonName("Viraj", "Hegde"));
+		expected.add(new PersonName("Shalmi", "Shetty"));
+		expected.add(new PersonName("Shravya Bhaskar", "Shetty"));
+
+		List<PersonName> actual = sorter.sortByLastNameAndGivenName(inputNames);
 
 		assertEquals (expected.size(),actual.size());
 
@@ -39,7 +44,7 @@ public class SorterTest {
 			PersonName actualPerson = actual.get(i);
 			assertEquals(expectedPerson.getGivenName(), actualPerson.getGivenName());
 			assertEquals(expectedPerson.getLastName(), actualPerson.getLastName());
-		} 
+		}  
 
 
 	}
